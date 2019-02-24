@@ -25,12 +25,12 @@ app.get('/api/customer/', (req, res) => {
 });
 
 app.post('/api/customer',(req,res)=>{
-    res.send(req.body);
-    // lC.CreateCustomer(JSON.parse(req.body)).then((data)=>{
-    //     res.send(data);
-    // },(err)=>{
-    //     res.send(err);
-    // });
+    // res.send(req.body);
+    lC.CreateCustomer(req.body).then((data)=>{
+        res.send(data);
+    },(err)=>{
+        res.send(err);
+    });
 });
 app.listen(3000, () => {
     console.log('server is running');
